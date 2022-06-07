@@ -1,0 +1,20 @@
+{
+    "name": "mjydh/apiresponse",
+    "description": "Paquete de utilidades",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Gustavo Campos",
+            "email": "gcampos@santafe.gov.ar"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "MJYDH\\ApiResponseBundle\\": "vendor/mjydh/mjydh-library/ApiResponseBundle"
+        }
+    },
+    "require": {
+        "php": ">=5.0.0"
+    }
+}
