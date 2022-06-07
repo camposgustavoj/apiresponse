@@ -11,7 +11,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "MJYDH\\ApiResponseBundle\\": "vendor/mjydh/mjydh-library/ApiResponseBundle"
+            "MJYDH\\ApiResponseBundle\\": "vendor/mjydh/apiresponse/ApiResponseBundle"
         }
     },
     "require": {
