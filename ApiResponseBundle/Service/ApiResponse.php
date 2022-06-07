@@ -14,7 +14,7 @@ use MJYDH\ApiResponseBundle\Exception\ConstraintException;
 use MJYDH\ApiResponseBundle\Exception\AccessDeniedException;
 use MJYDH\ApiResponseBundle\Exception\NotFoundException;
 
-use MJYDH\ApiResponseBundle\Model\DataResponse as Data;
+use MJYDH\ApiResponseBundle\Model\DataResponse;
 
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 
@@ -25,11 +25,30 @@ class ApiResponse
 
     public function __construct(ParameterBagInterface $params)
     {
-        $this->srv_params = new Data($this->params->get("app.ministerio"),
+        $this->srv_params = new DataResponse($this->params->get("app.ministerio"),
                                     $this->params->get("app.nombre"),
                                     $this->params->get("app.secretaria"),
                                     $this->params->get('app.version')
                                 );
+    }
+
+    /**
+     * Retorna los datos del encabezado para la respuesta
+     * Obtiene los datos de los paramteros
+     * app.ministerio
+     * app.nombre
+     * app.secretaria
+     * app.version
+     * 
+     * ministerio
+     * nombre
+     * secretaria
+     * version
+     * 
+     * @return DataResponse
+     */
+    public function getDataHeader(){
+        return $this->srv_params;
     }
 
 
