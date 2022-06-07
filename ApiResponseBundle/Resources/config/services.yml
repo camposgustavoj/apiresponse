@@ -1,5 +1,0 @@
-services:
-    phpaapiguard.api_service:
-        class: MJYDH\ApiResponseBundle\Service\ApiResponse
-        arguments:
-           - '%apiresponse_config%'
