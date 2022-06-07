@@ -16,20 +16,30 @@ use MJYDH\ApiResponseBundle\Exception\NotFoundException;
 
 use MJYDH\ApiResponseBundle\Model\DataResponse;
 
-use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
-
 class ApiResponse
 {
-    private $srv_params = null;
+    private $configuration;
 
 
-    public function __construct(ParameterBagInterface $params)
+    public function __construct(array $configuration)
     {
-        $this->srv_params = new DataResponse($this->params->get("app.ministerio"),
-                                    $this->params->get("app.nombre"),
-                                    $this->params->get("app.secretaria"),
-                                    $this->params->get('app.version')
+        $this->configuration = $configuration;
+
+        $this->srv_params = new DataResponse($this->getParameter("app.ministerio"),
+                                    $this->getParameter("app.nombre"),
+                                    $this->getParameter("app.secretaria"),
+                                    $this->getParameter('app.version')
                                 );
+    }
+
+
+    private function getParameter($key)
+    {
+        if (!key_exists($key, $this->configuration)) {
+            throw new \Exception(sprintf('The %s parameter must be defined. It is missing.', $key));
+        }
+
+        return $this->configuration[$key];
     }
 
     /**
