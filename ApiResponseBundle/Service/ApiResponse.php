@@ -1,5 +1,5 @@
 <?php
-namespace App\ApiResponseBundle\Service;
+namespace MJYDH\ApiResponseBundle\Service;
 
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
@@ -8,13 +8,13 @@ use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 
 
-use App\ApiResponseBundle\Exception\ValidException;
-use App\ApiResponseBundle\Exception\FatalException;
-use App\ApiResponseBundle\Exception\ConstraintException;
-use App\ApiResponseBundle\Exception\AccessDeniedException;
-use App\ApiResponseBundle\Exception\NotFoundException;
+use MJYDH\ApiResponseBundle\Exception\ValidException;
+use MJYDH\ApiResponseBundle\Exception\FatalException;
+use MJYDH\ApiResponseBundle\Exception\ConstraintException;
+use MJYDH\ApiResponseBundle\Exception\AccessDeniedException;
+use MJYDH\ApiResponseBundle\Exception\NotFoundException;
 
-use App\ApiResponseBundle\Model\DataResponse as Data;
+use MJYDH\ApiResponseBundle\Model\DataResponse as Data;
 
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 

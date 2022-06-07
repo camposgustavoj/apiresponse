@@ -12,7 +12,7 @@
   *  @access public
   */
 
-namespace App\ApiResponseBundle\Model;
+namespace MJYDH\ApiResponseBundle\Model;
 
 
 class DataResponse
