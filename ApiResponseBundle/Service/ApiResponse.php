@@ -53,7 +53,7 @@ class ApiResponse
      * @return DataResponse
      */
     public function getDataHeader(){
-        return $this->srv_params;
+        return $this->params;
     }
 
 
@@ -131,7 +131,7 @@ class ApiResponse
 
         if ($include)
         {
-            $datos = $this->srv_params;
+            $datos = $this->params;
             $datos->setData($data);
         }
         else
