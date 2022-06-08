@@ -28,15 +28,12 @@ class ApiResponse
       private $params = null;
 
 
-    public function __construct(ParameterBagInterface $params)
+    public function __construct($ministerio, $nombre, $secretaria,$version)
     {
-        $this->params = $params;
-
-        $this->params = new DataResponse($this->params->get("app.ministerio"),
-                                $this->params->get("app.nombre"),
-                                $this->params->get("app.secretaria"),
-                                $this->params->get('app.version')
-                               );
+        $this->params = new DataResponse($ministerio,
+                                        $nombre,
+                                        $secretaria,
+                                        $version);
     }
 
 
